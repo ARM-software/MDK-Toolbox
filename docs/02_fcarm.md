@@ -1,6 +1,6 @@
 # File Converter fcarm
 
-[**MDK-Toolbox**](README.md) **&raquo; FCARM**
+[**MDK-Toolbox**](README.md) **&raquo; fcarm**
 
 This file converter reformats all web files into a single C-file which is then included and compiled into the project.
 
@@ -12,12 +12,12 @@ fcarm @commandfile
 
 Where
 
-`commandfile` is the name of a command file that can contain an inputlist, outputfile, and directives. (See below.)
+`commandfile` is the name of a command file that can contain an `inputlist`, an `outputfile`, and [`directives`](#directives).
 
 or
 
 ```sh
-fcarm {inputlist} TO {outputfile} {directives}
+fcarm {inputlist} to {outputfile} {directives}
 ```
 
 Where

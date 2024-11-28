@@ -18,14 +18,18 @@ Flags:
 
 **Examples**
 
+*Simple conversion*
+
 ```sh
-uv2csolution MyProject.uvprojx --dir ../
+uv2csolution MyProject.uvprojx
 ```
-This step generates the following files in the parent directory:
+This step generates the following files:
 
 - `MyProject.csolution.yaml`
 - `MyProject.cproject.yaml`
 - `vcpkg-configuration.json`
+
+*Multi-project workspace conversion*
 
 ```sh
 uv2csolution MyProject.uvmpw
@@ -36,7 +40,7 @@ This step generates the following files:
 - `MyProject.csolution.yaml`
 - `./MyProject1/MyProject1.cproject.yaml`
 - `./MyProject2/MyProject2.cproject.yaml`
-- More cproject files, depending on the number of uvprojx files in the uvmpw file.
+- More cproject files in separate directories, depending on the number of projects in the multi-project workspace.
 - `vcpkg-configuration.json`
 
 [**ElfDwT**](./03_elfdwt.md) **&laquo; Previous Chapter**

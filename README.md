@@ -7,7 +7,7 @@ a set of command-line tools for various purposes.
 
 The [**Users Guide**](./docs/README.md) provides detailed information.
 
-## Inlcuded tools
+## Included tools
 
 The MDK-Toolbox consists of the following utilities:
 

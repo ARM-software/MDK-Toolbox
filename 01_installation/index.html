@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Installation - MDK-Toolbox Help</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Installation";
+        var mkdocs_page_input_path = "01_installation.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> MDK-Toolbox Help
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Installation</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#using-vcpkg">Using vcpkg</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#installation_1">Installation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#initialization">Initialization</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#update-vcpkg-registry">Update vcpkg registry</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#direct-access">Direct access</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#using-an-extension">Using an extension</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../02_fcarm/">fcarm</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../03_elfdwt/">ElfDwT</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../04_uv2csolution/">uv2csolution</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">MDK-Toolbox Help</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Installation</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="installation">Installation</h1>
+<p>There are three ways how to install the MDK-Toolbox. The first two can be used to install the tools on the command line,
+while the third approach is used in the Visual Studio Code GUI.</p>
+<ol>
+<li><a href="#using-vcpkg">Using vcpkg</a> - a free C/C++ package manager for acquiring and managing libraries.</li>
+<li><a href="#direct-access">Direct access</a> via curl or wget.</li>
+<li><a href="#using-an-extension">Using an extension</a> in VS Code.</li>
+</ol>
+<h2 id="using-vcpkg">Using vcpkg</h2>
+<p><a href="https://vcpkg.io/en/index.html">vcpkg</a> is runs on all platforms, build systems, and work flows.</p>
+<h3 id="installation_1">Installation</h3>
+<p>If you have not done it before, install <code>vcpkg</code>:</p>
+<ul>
+<li>In a Windows command shell, type:</li>
+</ul>
+<pre><code class="language-sh">curl -LO https://aka.ms/vcpkg-init.cmd &amp;&amp; .\vcpkg-init.cmd
+</code></pre>
+<ul>
+<li>In a Windows PowerShell, type:</li>
+</ul>
+<pre><code>iex (iwr -useb https://aka.ms/vcpkg-init.ps1)
+</code></pre>
+<ul>
+<li>In a macOS/Linux terminal, type:</li>
+</ul>
+<pre><code class="language-sh">. &lt;(curl https://aka.ms/vcpkg-init.sh -L)
+</code></pre>
+<h3 id="initialization">Initialization</h3>
+<ul>
+<li>In a Windows command shell, type:</li>
+</ul>
+<pre><code class="language-sh">%USERPROFILE%\.vcpkg\vcpkg-init.cmd
+</code></pre>
+<ul>
+<li>In a Windows PowerShell, type:</li>
+</ul>
+<pre><code class="language-sh">. ~/.vcpkg/vcpkg-init.ps1
+</code></pre>
+<ul>
+<li>In a macOS/Linux terminal, type:</li>
+</ul>
+<pre><code class="language-sh">. ~/.vcpkg/vcpkg-init
+</code></pre>
+<h3 id="update-vcpkg-registry">Update vcpkg registry</h3>
+<p>Update the Arm vcpkg registry to get access to tools hosted by Arm:</p>
+<pre><code class="language-sh">vcpkg-shell x-update-registry arm
+</code></pre>
+<ol>
+<li>Enable the MDK-Toolbox:</li>
+</ol>
+<pre><code class="language-shell">vcpkg-shell use mdk-toolbox
+</code></pre>
+<h2 id="direct-access">Direct access</h2>
+<p>The MDK-Toolbox is available for download in the <strong>Arm Tools Artifactory</strong> at https://artifacts.tools.arm.com/mdk-toolbox/.</p>
+<p>Download the right compressed archive for your host operating system:</p>
+<ul>
+<li>In a Windows terminal, type:</li>
+</ul>
+<pre><code class="language-sh">curl --output mdk-toolbox-windows-amd64.zip https://artifacts.tools.arm.com/mdk-toolbox/1.0.0/mdk-toolbox-windows-amd64.zip
+</code></pre>
+<ul>
+<li>In a macOS terminal, type:</li>
+</ul>
+<pre><code class="language-sh">curl --output mdk-toolbox-darwin-amd64.tar.gz https://artifacts.tools.arm.com/mdk-toolbox/1.0.0/mdk-toolbox-darwin-amd64.tar.gz
+</code></pre>
+<ul>
+<li>In a Linux terminal, type:</li>
+</ul>
+<pre><code class="language-sh">curl --output mdk-toolbox-linux-amd64.tar.gz https://artifacts.tools.arm.com/mdk-toolbox/1.0.0/mdk-toolbox-linux-amd64.tar.gz
+</code></pre>
+<ol>
+<li>Unzip the file.</li>
+<li>Set your <code>PATH</code> variable to the <code>bin</code> directory of the unzipped package.</li>
+</ol>
+<h2 id="using-an-extension">Using an extension</h2>
+<p>The <a href="https://marketplace.visualstudio.com/items?itemName=Arm.environment-manager">Arm Environment Manager extension</a> for Visual Studio Code is using vcpkg for tools installation. It already ships with the package manager so that there is no need for the user to manually install vcpkg.</p>
+<p>In a CMSIS Solution project, create a file called <code>vcpkg_configuration.json</code> that controls the download of additional tools. Add the following:</p>
+<ul>
+<li>Add the Arm artifactory registry to the list of registries:</li>
+</ul>
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;arm&quot;,
+    &quot;kind&quot;: &quot;artifact&quot;,
+    &quot;location&quot;: &quot;https://artifacts.tools.arm.com/vcpkg-ce-registry/registry.zip&quot;
+}
+</code></pre>
+<ul>
+<li>Add the mdk-toolbox in the requirement list:</li>
+</ul>
+<pre><code class="language-json">&quot;arm:mdk-toolbox&quot;: &quot;^1.0.0&quot;
+</code></pre>
+<p>Refer to the <a href="https://marketplace.visualstudio.com/items?itemName=Arm.environment-manager">Arm Environment Manager documentation</a> for more information.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../02_fcarm/" class="btn btn-neutral float-right" title="fcarm">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../02_fcarm/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

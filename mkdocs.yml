@@ -1,7 +1,7 @@
 site_name: MDK-Toolbox Help
 repo_url: https://github.com/ARM-software/MDK-Toolbox
 nav:
-    - Home: index.md
+    - MDK-Toolbox: README.md
     - Installation: 01_installation.md
     - fcarm: 02_fcarm.md
     - ElfDwT: 03_elfdwt.md
@@ -9,5 +9,7 @@ nav:
     - Licenses: licenses.md
 theme:
   name: readthedocs
+  logo: img/Arm_KEIL_horizontal_white_SM.png
 markdown_extensions:
   - admonition
+  - pymdownx.blocks.tab

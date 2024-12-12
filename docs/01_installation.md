@@ -13,21 +13,21 @@ while the third approach is used in the Visual Studio Code GUI.
 
 ### Installation
 
-If you have not done it before, install `vcpkg`:
+If you have not done it before, install `vcpkg` by typing the following at the appropriate command line.
 
-- In a Windows command shell, type:
+**Windows command shell**
 
 ```shell
 curl -LO https://aka.ms/vcpkg-init.cmd && .\vcpkg-init.cmd
 ```
 
-- In a Windows PowerShell, type:
+**Windows PowerShell**
 
 ```shell
 iex (iwr -useb https://aka.ms/vcpkg-init.ps1)
 ```
 
-- In a macOS/Linux terminal, type:
+**macOS/Linux terminal**
 
 ```shell
 . <(curl https://aka.ms/vcpkg-init.sh -L)
@@ -35,19 +35,21 @@ iex (iwr -useb https://aka.ms/vcpkg-init.ps1)
 
 ### Initialization
 
-- In a Windows command shell, type:
+Initialize `vcpkg` by typing the following at the appropriate command line.
+
+**Windows command shell**
 
 ```shell
 %USERPROFILE%\.vcpkg\vcpkg-init.cmd
 ```
 
-- In a Windows PowerShell, type:
+**Windows PowerShell**
 
 ```shell
 . ~/.vcpkg/vcpkg-init.ps1
 ```
 
-- In a macOS/Linux terminal, type:
+**macOS/Linux terminal**
 
 ```shell
 . ~/.vcpkg/vcpkg-init
@@ -55,15 +57,15 @@ iex (iwr -useb https://aka.ms/vcpkg-init.ps1)
 
 ### Update vcpkg registry
 
-Update the Arm vcpkg registry to get access to tools hosted by Arm:
+Update the Arm registry to get access to tools using `vcpkg`:
 
 ```shell
 vcpkg-shell x-update-registry arm
 ```
 
-4. Enable the MDK-Toolbox:
+Enable the MDK-Toolbox:
 
-```shellell
+```shell
 vcpkg-shell use mdk-toolbox
 ```
 
@@ -72,19 +74,19 @@ vcpkg-shell use mdk-toolbox
 The MDK-Toolbox is available for download in the [Arm Tools Artifactory](https://artifacts.tools.arm.com/mdk-toolbox/).
 Download the right compressed archive for your host operating system:
 
-- In a Windows terminal, type:
+**Windows command shell**
 
 ```shell
 curl --output mdk-toolbox-windows-amd64.zip https://artifacts.tools.arm.com/mdk-toolbox/1.0.0/mdk-toolbox-windows-amd64.zip
 ```
 
-- In a macOS terminal, type:
+**macOS terminal**
 
 ```shell
 curl --output mdk-toolbox-darwin-amd64.tar.gz https://artifacts.tools.arm.com/mdk-toolbox/1.0.0/mdk-toolbox-darwin-amd64.tar.gz
 ```
 
-- In a Linux terminal, type:
+**Linux terminal**
 
 ```shell
 curl --output mdk-toolbox-linux-amd64.tar.gz https://artifacts.tools.arm.com/mdk-toolbox/1.0.0/mdk-toolbox-linux-amd64.tar.gz

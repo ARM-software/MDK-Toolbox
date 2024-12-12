@@ -20,6 +20,6 @@ The MDK-Toolbox consists of the following utilities:
 
 - [Mbed TLS/cert_write](https://mbed-tls.readthedocs.io/en/latest/kb/how-to/generate-a-self-signed-certificate/#command-to-generate-a-self-signed-certificate)
 - Mbed TLS/gen_key:
-  - [RSA key pair generator](https://mbed-tls.readthedocs.io/en/latest/kb/cryptography/rsa-key-pair-generator/)
-  - [How to generate a Certificate Request (CSR)](https://mbed-tls.readthedocs.io/en/latest/kb/how-to/generate-a-certificate-request-csr/)
-  - [How to generate a self-signed certificate](https://mbed-tls.readthedocs.io/en/latest/kb/how-to/generate-a-self-signed-certificate/)
+    - [RSA key pair generator](https://mbed-tls.readthedocs.io/en/latest/kb/cryptography/rsa-key-pair-generator/)
+    - [How to generate a Certificate Request (CSR)](https://mbed-tls.readthedocs.io/en/latest/kb/how-to/generate-a-certificate-request-csr/)
+    - [How to generate a self-signed certificate](https://mbed-tls.readthedocs.io/en/latest/kb/how-to/generate-a-self-signed-certificate/)

@@ -30,7 +30,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-          <a href=".." class="icon icon-home"> MDK-Toolbox Help
+          <a href="..">
+          <img src="../img/Arm_KEIL_horizontal_white_SM.png" class="logo" alt="Logo"/>
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
       <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
@@ -40,7 +41,7 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                <li class="toctree-l1"><a class="reference internal" href="..">MDK-Toolbox</a>
                 </li>
               </ul>
               <ul>
@@ -60,7 +61,15 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a>
+    <li class="toctree-l3"><a class="reference internal" href="#optimization-level-conversion">Optimization level conversion</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#simple-conversion">Simple conversion</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#multi-project-workspace-conversion">Multi-project workspace conversion</a>
     </li>
         </ul>
     </li>
@@ -106,8 +115,61 @@ Flags:
   -h, --help         Print usage
   -V, --version      Print version
 </code></pre>
-<h3 id="examples">Examples</h3>
-<p><em>Simple conversion</em></p>
+<h3 id="optimization-level-conversion">Optimization level conversion</h3>
+<p>As the CMSIS-Toolbox supports multiple toolchains (Arm Compiler, IAR, GCC, LLVM), the <a href="https://open-cmsis-pack.github.io/cmsis-toolbox/YML-Input-Format/#optimize"><code>optimize:</code> node</a> has "generic" levels rather than toolchain specific command line flags. When mapping from µVision, multiple values need to be mapped to a single YML value.</p>
+<p>The following table shoes the conversion done by <code>uv2csolution</code>:</p>
+<table>
+<thead>
+<tr>
+<th>µVision</th>
+<th>CMSIS Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-O0, <code>&lt;default&gt;</code></td>
+<td><code>optimize: none</code></td>
+</tr>
+<tr>
+<td>-O1</td>
+<td><code>optimize: none</code></td>
+</tr>
+<tr>
+<td>-O2</td>
+<td><code>optimize: speed</code></td>
+</tr>
+<tr>
+<td>-O3</td>
+<td><code>optimize: speed</code></td>
+</tr>
+<tr>
+<td>-Ofast</td>
+<td><code>optimize: speed</code></td>
+</tr>
+<tr>
+<td>-Os balanced</td>
+<td><code>optimize: balanced</code></td>
+</tr>
+<tr>
+<td>-Oz image size</td>
+<td><code>optimize: size</code></td>
+</tr>
+<tr>
+<td>-Omax</td>
+<td><code>optimize: balanced</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>If in µVision <strong>Options for Target - Output - Debug Information</strong> is selected, <code>optimize: debug</code> is set to ensure best possible debug experience. Please uncheck that option to enable optimization level conversion based on the table above.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is always the possibility to specify toolchain specific command line options using the <a href="https://open-cmsis-pack.github.io/cmsis-toolbox/YML-Input-Format/#misc"><code>misc:</code> node</a> in case the generic abstractions lack granularity.</p>
+</div>
+<h2 id="examples">Examples</h2>
+<h3 id="simple-conversion">Simple conversion</h3>
 <pre><code class="language-shell">uv2csolution MyProject.uvprojx
 </code></pre>
 <p>This step generates the following files:</p>
@@ -116,7 +178,7 @@ Flags:
 <li><code>MyProject.cproject.yaml</code></li>
 <li><code>vcpkg-configuration.json</code></li>
 </ul>
-<p><em>Multi-project workspace conversion</em></p>
+<h3 id="multi-project-workspace-conversion">Multi-project workspace conversion</h3>
 <pre><code class="language-shell">uv2csolution MyProject.uvmpw
 </code></pre>
 <p>This step generates the following files:</p>

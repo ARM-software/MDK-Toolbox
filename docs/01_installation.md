@@ -1,7 +1,5 @@
 # Installation
 
-[**MDK-Toolbox**](README.md) **&raquo; Installation**
-
 There are three ways how to install the MDK-Toolbox. The first two can be used to install the tools on the command line,
 while the third approach is used in the Visual Studio Code GUI.
 
@@ -13,108 +11,108 @@ while the third approach is used in the Visual Studio Code GUI.
 
 [vcpkg](https://vcpkg.io/en/index.html) is runs on all platforms, build systems, and work flows.
 
-1. If you have not done it before, install vcpkg (otherwise continue to step 2):
+### Installation
 
-   - In a Windows command shell, type:
+If you have not done it before, install `vcpkg`:
 
-     ```sh
-     curl -LO https://aka.ms/vcpkg-init.cmd && .\vcpkg-init.cmd
-     ```
+- In a Windows command shell, type:
 
-   - In a Windows PowerShell, type:
+```shell
+curl -LO https://aka.ms/vcpkg-init.cmd && .\vcpkg-init.cmd
+```
 
-     ```sh
-     iex (iwr -useb https://aka.ms/vcpkg-init.ps1)
-     ```
+- In a Windows PowerShell, type:
 
-   - In a macOS/Linux terminal, type:
+```shell
+iex (iwr -useb https://aka.ms/vcpkg-init.ps1)
+```
 
-     ```sh
-     . <(curl https://aka.ms/vcpkg-init.sh -L)
-     ```
+- In a macOS/Linux terminal, type:
 
-2. Initialize vcpkg:
+```shell
+. <(curl https://aka.ms/vcpkg-init.sh -L)
+```
 
-   - In a Windows command shell, type:
+### Initialization
 
-     ```sh
-     %USERPROFILE%\.vcpkg\vcpkg-init.cmd
-     ```
+- In a Windows command shell, type:
 
-   - In a Windows PowerShell, type:
+```shell
+%USERPROFILE%\.vcpkg\vcpkg-init.cmd
+```
 
-     ```sh
-     . ~/.vcpkg/vcpkg-init.ps1
-     ```
+- In a Windows PowerShell, type:
 
-   - In a macOS/Linux terminal, type:
+```shell
+. ~/.vcpkg/vcpkg-init.ps1
+```
 
-     ```sh
-     . ~/.vcpkg/vcpkg-init
-     ```
+- In a macOS/Linux terminal, type:
 
-3. Update the Arm vcpkg registry (this will give you access to tools hosted by Arm):
+```shell
+. ~/.vcpkg/vcpkg-init
+```
 
-   ```shell
-   vcpkg-shell x-update-registry arm
-   ```
+### Update vcpkg registry
+
+Update the Arm vcpkg registry to get access to tools hosted by Arm:
+
+```shell
+vcpkg-shell x-update-registry arm
+```
 
 4. Enable the MDK-Toolbox:
 
-   ```shell
-   vcpkg-shell use mdk-toolbox
-   ```
+```shellell
+vcpkg-shell use mdk-toolbox
+```
 
 ## Direct access
 
-The MDK-Toolbox is available for download in the **Arm Tools Artifactory** at https://artifacts.tools.arm.com/mdk-toolbox/.
+The MDK-Toolbox is available for download in the [Arm Tools Artifactory](https://artifacts.tools.arm.com/mdk-toolbox/).
+Download the right compressed archive for your host operating system:
 
-1. Download the right compressed archive for your host operating system:
+- In a Windows terminal, type:
 
-   - In a Windows terminal, type:
+```shell
+curl --output mdk-toolbox-windows-amd64.zip https://artifacts.tools.arm.com/mdk-toolbox/1.0.0/mdk-toolbox-windows-amd64.zip
+```
 
-     ```sh
-     curl --output mdk-toolbox-windows-amd64.zip https://artifacts.tools.arm.com/mdk-toolbox/1.0.0/mdk-toolbox-windows-amd64.zip
-     ```
+- In a macOS terminal, type:
 
-   - In a macOS terminal, type:
+```shell
+curl --output mdk-toolbox-darwin-amd64.tar.gz https://artifacts.tools.arm.com/mdk-toolbox/1.0.0/mdk-toolbox-darwin-amd64.tar.gz
+```
 
-     ```sh
-     curl --output mdk-toolbox-darwin-amd64.tar.gz https://artifacts.tools.arm.com/mdk-toolbox/1.0.0/mdk-toolbox-darwin-amd64.tar.gz
-     ```
+- In a Linux terminal, type:
 
-   - In a Linux terminal, type:
+```shell
+curl --output mdk-toolbox-linux-amd64.tar.gz https://artifacts.tools.arm.com/mdk-toolbox/1.0.0/mdk-toolbox-linux-amd64.tar.gz
+```
 
-     ```sh
-     curl --output mdk-toolbox-linux-amd64.tar.gz https://artifacts.tools.arm.com/mdk-toolbox/1.0.0/mdk-toolbox-linux-amd64.tar.gz
-     ```
-
-2. Unzip the file.
-
-3. Set your `PATH` variable to the `bin` directory of the unzipped package.
+1. Unzip the file.
+2. Set your `PATH` variable to the `bin` directory of the unzipped package.
 
 ## Using an extension
 
 The [Arm Environment Manager extension](https://marketplace.visualstudio.com/items?itemName=Arm.environment-manager) for Visual Studio Code is using vcpkg for tools installation. It already ships with the package manager so that there is no need for the user to manually install vcpkg.
 
-In a CMSIS Solution project, create a file called `vcpkg_configuration.json` that controls the download of additional tools.
+In a CMSIS Solution project, create a file called `vcpkg_configuration.json` that controls the download of additional tools. Add the following:
 
-1. In the `vcpkg_configuration.json` file, the Arm artifactory registry must be added to the list of registries.
+- Add the Arm artifactory registry to the list of registries:
 
-   ```json
-   {
-       "name": "arm",
-       "kind": "artifact",
-       "location": "https://artifacts.tools.arm.com/vcpkg-ce-registry/registry.zip"
-   }
-   ```
+```json
+{
+    "name": "arm",
+    "kind": "artifact",
+    "location": "https://artifacts.tools.arm.com/vcpkg-ce-registry/registry.zip"
+}
+```
 
-2. In the vcpkg_configuration.json file, the mdk-toolbox should be added under the requirement list:
+- Add the mdk-toolbox in the requirement list:
 
-   ```json
-   "arm:mdk-toolbox": "^1.0.0"
-   ```
+```json
+"arm:mdk-toolbox": "^1.0.0"
+```
 
-3. Refer to the [Arm Environment Manager documentation](https://marketplace.visualstudio.com/items?itemName=Arm.environment-manager) for more information.
-
-[**Overview**](README.md) **&laquo; Chapters &raquo;** [**FCARM**](./02_fcarm.md)
+Refer to the [Arm Environment Manager documentation](https://marketplace.visualstudio.com/items?itemName=Arm.environment-manager) for more information.

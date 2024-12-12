@@ -1,0 +1,13 @@
+site_name: MDK-Toolbox Help
+repo_url: https://github.com/ARM-software/MDK-Toolbox
+nav:
+    - Home: index.md
+    - Installation: 01_installation.md
+    - fcarm: 02_fcarm.md
+    - ElfDwT: 03_elfdwt.md
+    - uv2csolution: 04_uv2csolution.md
+    - Licenses: licenses.md
+theme:
+  name: readthedocs
+markdown_extensions:
+  - admonition

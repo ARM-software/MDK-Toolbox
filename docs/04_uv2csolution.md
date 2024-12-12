@@ -1,12 +1,10 @@
 # uvprojx converter uv2csolution
 
-[**MDK-Toolbox**](README.md) **&raquo; uvprojx converter uv2csolution**
-
 The **uv2csolution** project file converter allows users of µVision to migrate to the new project format CMSIS solution required by CMSIS-Toolbox.
 
 ## Usage
 
-```
+```text
 Usage:
   uv2csolution <project.uvprojx | multiproject.uvmpw> | [flags]
 
@@ -16,13 +14,14 @@ Flags:
   -V, --version      Print version
 ```
 
-**Examples**
+### Examples
 
 *Simple conversion*
 
-```sh
+```shell
 uv2csolution MyProject.uvprojx
 ```
+
 This step generates the following files:
 
 - `MyProject.csolution.yaml`
@@ -31,7 +30,7 @@ This step generates the following files:
 
 *Multi-project workspace conversion*
 
-```sh
+```shell
 uv2csolution MyProject.uvmpw
 ```
 
@@ -42,5 +41,3 @@ This step generates the following files:
 - `./MyProject2/MyProject2.cproject.yaml`
 - More cproject files in separate directories, depending on the number of projects in the multi-project workspace.
 - `vcpkg-configuration.json`
-
-[**ElfDwT**](./03_elfdwt.md) **&laquo; Previous Chapter**

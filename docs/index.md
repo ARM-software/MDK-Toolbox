@@ -14,6 +14,7 @@ The MDK-Toolbox consists of the following utilities:
 - [FCARM](./02_fcarm.md)
 - [ElfDwt](./03_elfdwt.md)
 - [uv2csolution](./04_uv2csolution.md)
+- [Licenses](./licenses.md)
 
 ## External documentation
 

@@ -1,12 +1,10 @@
 # File Converter fcarm
 
-[**MDK-Toolbox**](README.md) **&raquo; fcarm**
-
 This file converter reformats all web files into a single C-file which is then included and compiled into the project.
 
 fcarm is invoked from the command line and has the syntax:
 
-```sh
+```shell
 fcarm @commandfile
 ```
 
@@ -16,7 +14,7 @@ Where
 
 or
 
-```sh
+```shell
 fcarm {inputlist} to {outputfile} {directives}
 ```
 
@@ -135,34 +133,34 @@ in better code density.
 The following command line converts and optimizes `index.htm`, creates the output C-file `index.c`, and creates the
 listing file `index.lst`:
 
-```sh
+```shell
 fcarm index.htm
 ```
 
 The following command line converts and optimizes a list of files, creates the output C-file `web.c`, and creates the
 listing file `web.lst`:
 
-```sh
+```shell
 fcarm index.htm, keil.gif, llblue.jpg, system.cgi TO web.c
 ```
 
 The following command line converts and optimizes a list of files, creates the output C-file `web.c`, and suppresses the
 creation of the listing file (`nopr` directive). The files are located in the sub-folder `Web_Files`:
 
-```sh
+```shell
 fcarm index.htm, keil.gif, llblue.jpg, system.cgi TO web.c nopr root(Web_Files)
 ```
 
 The following command line converts and optimizes a list of files, creates the output C-file `web.c`, and creates the
 listing file `web.lst`. The file `doStuff.js` is excluded from optimization:
 
-```sh
+```shell
 fcarm index.htm, keil.gif, llblue.jpg, system.cgi, ~doStuff.js TO web.c
 ```
 
 The following command line uses a command file:
 
-```sh
+```shell
 fcarm @fcarm_command_file
 ```
 
@@ -181,7 +179,7 @@ See also: [NOPRINT](#noprint)
 
 **Example**
 
-```sh
+```shell
 fcarm index.htm, keil.gif to web.c print (Sample.lst)
 ```
 
@@ -197,7 +195,7 @@ See also: [PRINT](#print)
 
 **Example**
 
-```sh
+```shell
 fcarm index.htm, keil.gif to web.c noprint
 ```
 
@@ -215,7 +213,7 @@ See also: [PAGELENGTH](#pagelength)
 
 **Example**
 
-```sh
+```shell
 fcarm index.htm to web.c pagewidth (132)
 ```
 
@@ -232,7 +230,7 @@ See also: [PAGEWIDTH](#pagewidth)
 
 **Example**
 
-```sh
+```shell
 fcarm index.htm to web.c pagelength (55)
 ```
 
@@ -246,8 +244,6 @@ The **ROOT** directive defines the root path where the web files are located rel
 
 **Example**
 
-```sh
+```shell
 fcarm index.htm, keil.gif to web.c root(Web_Files)
 ```
-
-[**Installation**](./01_installation.md) **&laquo; Chapters &raquo;** [**ElfDwt**](./03_elfdwt.md)

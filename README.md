@@ -5,7 +5,7 @@ a set of command-line tools for various purposes.
 
 ## Users guide
 
-The [**Users Guide**](./docs/README.md) provides detailed information.
+The [**Users Guide**](https://arm-software.github.io/MDK-toolbox) provides detailed information.
 
 ## Included tools
 
@@ -16,6 +16,12 @@ The MDK-Toolbox consists of the following utilities:
 - **uv2csolution**, a command-line utility that converts µVision projects to [CMSIS solution format](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/YML-Input-Format.md).
 - **Mbed TLS/cert_write**, an application that signs a certificate signing request, or self-signs a certificate.
 - **Mbed TLS/gen_key**, an application that generates a key for any of the supported public-key algorithms (RSA or ECC).
+
+## Documentation
+
+The documentation can be built using [mkdocs](https://www.mkdocs.org/). It requires Python 3 to be installed on your local machine.
+Check out [Getting Started with MkDocs](https://www.mkdocs.org/getting-started/) to learn how to use it. A CI workflow is
+in place that builds the documentation automatically.
 
 ## Licenses
 

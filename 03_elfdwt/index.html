@@ -63,6 +63,10 @@
                 <li class="toctree-l1"><a class="reference internal" href="../04_uv2csolution/">uv2csolution</a>
                 </li>
               </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../licenses/">Licenses</a>
+                </li>
+              </ul>
       </div>
     </div>
     </nav>
@@ -79,6 +83,7 @@
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
       <li class="breadcrumb-item active">ElfDwT</li>
     <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/ARM-software/MDK-Toolbox/edit/master/docs/03_elfdwt.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -93,10 +98,10 @@ this computation automatically. The ULINK Family of Debug and Trace Adapters do 
 used as a Flash loader.</p>
 <p>Use the application image file as an argument. The result is written back into the image file. If no BASEADDRESS is
 specified, then the base address 0x00 is assumed. For example:</p>
-<pre><code class="language-sh">elfdwt blinky.axf
+<pre><code class="language-shell">elfdwt blinky.axf
 </code></pre>
 <p>Specify a different base address with:</p>
-<pre><code class="language-sh">elfdwt blinky.axf BASEADDRESS(0x1B000000)
+<pre><code class="language-shell">elfdwt blinky.axf BASEADDRESS(0x1B000000)
 </code></pre>
 <h2 id="algorithm-for-creating-the-checksum">Algorithm for creating the checksum</h2>
 <p>The reserved Cortex-M exception vector location 7 (offset <code>0x001C</code> in the vector table) should contain the 2's complement of
@@ -129,6 +134,10 @@ the user code.</p>
 
   <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/ARM-software/MDK-Toolbox" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
     
     
       <span><a href="../02_fcarm/" style="color: #fcfcfc">&laquo; Previous</a></span>

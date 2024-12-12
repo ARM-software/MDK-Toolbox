@@ -79,6 +79,10 @@
                 <li class="toctree-l1"><a class="reference internal" href="../04_uv2csolution/">uv2csolution</a>
                 </li>
               </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../licenses/">Licenses</a>
+                </li>
+              </ul>
       </div>
     </div>
     </nav>
@@ -95,6 +99,7 @@
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
       <li class="breadcrumb-item active">fcarm</li>
     <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/ARM-software/MDK-Toolbox/edit/master/docs/02_fcarm.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -105,12 +110,12 @@
                 <h1 id="file-converter-fcarm">File Converter fcarm</h1>
 <p>This file converter reformats all web files into a single C-file which is then included and compiled into the project.</p>
 <p>fcarm is invoked from the command line and has the syntax:</p>
-<pre><code class="language-sh">fcarm @commandfile
+<pre><code class="language-shell">fcarm @commandfile
 </code></pre>
 <p>Where</p>
 <p><code>commandfile</code> is the name of a command file that can contain an <code>inputlist</code>, an <code>outputfile</code>, and <a href="#directives"><code>directives</code></a>.</p>
 <p>or</p>
-<pre><code class="language-sh">fcarm {inputlist} to {outputfile} {directives}
+<pre><code class="language-shell">fcarm {inputlist} to {outputfile} {directives}
 </code></pre>
 <p>Where</p>
 <ul>
@@ -242,22 +247,22 @@ in better code density.</p>
 <h2 id="examples">Examples</h2>
 <p>The following command line converts and optimizes <code>index.htm</code>, creates the output C-file <code>index.c</code>, and creates the
 listing file <code>index.lst</code>:</p>
-<pre><code class="language-sh">fcarm index.htm
+<pre><code class="language-shell">fcarm index.htm
 </code></pre>
 <p>The following command line converts and optimizes a list of files, creates the output C-file <code>web.c</code>, and creates the
 listing file <code>web.lst</code>:</p>
-<pre><code class="language-sh">fcarm index.htm, keil.gif, llblue.jpg, system.cgi TO web.c
+<pre><code class="language-shell">fcarm index.htm, keil.gif, llblue.jpg, system.cgi TO web.c
 </code></pre>
 <p>The following command line converts and optimizes a list of files, creates the output C-file <code>web.c</code>, and suppresses the
 creation of the listing file (<code>nopr</code> directive). The files are located in the sub-folder <code>Web_Files</code>:</p>
-<pre><code class="language-sh">fcarm index.htm, keil.gif, llblue.jpg, system.cgi TO web.c nopr root(Web_Files)
+<pre><code class="language-shell">fcarm index.htm, keil.gif, llblue.jpg, system.cgi TO web.c nopr root(Web_Files)
 </code></pre>
 <p>The following command line converts and optimizes a list of files, creates the output C-file <code>web.c</code>, and creates the
 listing file <code>web.lst</code>. The file <code>doStuff.js</code> is excluded from optimization:</p>
-<pre><code class="language-sh">fcarm index.htm, keil.gif, llblue.jpg, system.cgi, ~doStuff.js TO web.c
+<pre><code class="language-shell">fcarm index.htm, keil.gif, llblue.jpg, system.cgi, ~doStuff.js TO web.c
 </code></pre>
 <p>The following command line uses a command file:</p>
-<pre><code class="language-sh">fcarm @fcarm_command_file
+<pre><code class="language-shell">fcarm @fcarm_command_file
 </code></pre>
 <h2 id="directives">Directives</h2>
 <h3 id="print">PRINT</h3>
@@ -270,7 +275,7 @@ the name of the generated  c-source file with a .LST extension.</p>
 </ul>
 <p>See also: <a href="#noprint">NOPRINT</a></p>
 <p><strong>Example</strong></p>
-<pre><code class="language-sh">fcarm index.htm, keil.gif to web.c print (Sample.lst)
+<pre><code class="language-shell">fcarm index.htm, keil.gif to web.c print (Sample.lst)
 </code></pre>
 <h3 id="noprint">NOPRINT</h3>
 <p>The <strong>NOPRINT</strong> directive prevents the file converter from generating a listing file.</p>
@@ -281,7 +286,7 @@ the name of the generated  c-source file with a .LST extension.</p>
 </ul>
 <p>See also: <a href="#print">PRINT</a></p>
 <p><strong>Example</strong></p>
-<pre><code class="language-sh">fcarm index.htm, keil.gif to web.c noprint
+<pre><code class="language-shell">fcarm index.htm, keil.gif to web.c noprint
 </code></pre>
 <h3 id="pagewidth">PAGEWIDTH</h3>
 <p>The <strong>PAGEWIDTH</strong> directive specifies the number of character per line that may be printed to the converter listing file.
@@ -294,7 +299,7 @@ Lines with more than the specified number of characters are broken into two or m
 </ul>
 <p>See also: <a href="#pagelength">PAGELENGTH</a></p>
 <p><strong>Example</strong></p>
-<pre><code class="language-sh">fcarm index.htm to web.c pagewidth (132)
+<pre><code class="language-shell">fcarm index.htm to web.c pagewidth (132)
 </code></pre>
 <h3 id="pagelength">PAGELENGTH</h3>
 <p>The <strong>PAGELENGTH</strong> directive specifies the number of lines printed per page in the converter listing file. The minimum page
@@ -306,7 +311,7 @@ length is 10 lines per page. The maximum page length is 65535.</p>
 </ul>
 <p>See also: <a href="#pagewidth">PAGEWIDTH</a></p>
 <p><strong>Example</strong></p>
-<pre><code class="language-sh">fcarm index.htm to web.c pagelength (55)
+<pre><code class="language-shell">fcarm index.htm to web.c pagelength (55)
 </code></pre>
 <h3 id="root">ROOT</h3>
 <p>The <strong>ROOT</strong> directive defines the root path where the web files are located relative to the project directory path.</p>
@@ -316,7 +321,7 @@ length is 10 lines per page. The maximum page length is 65535.</p>
 <li>Default: The current project directory path is used as the web container.</li>
 </ul>
 <p><strong>Example</strong></p>
-<pre><code class="language-sh">fcarm index.htm, keil.gif to web.c root(Web_Files)
+<pre><code class="language-shell">fcarm index.htm, keil.gif to web.c root(Web_Files)
 </code></pre>
               
             </div>
@@ -344,6 +349,10 @@ length is 10 lines per page. The maximum page length is 65535.</p>
 
   <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/ARM-software/MDK-Toolbox" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
     
     
       <span><a href="../01_installation/" style="color: #fcfcfc">&laquo; Previous</a></span>

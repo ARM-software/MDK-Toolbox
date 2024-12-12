@@ -67,6 +67,10 @@
     </ul>
                 </li>
               </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../licenses/">Licenses</a>
+                </li>
+              </ul>
       </div>
     </div>
     </nav>
@@ -83,6 +87,7 @@
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
       <li class="breadcrumb-item active">uv2csolution</li>
     <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/ARM-software/MDK-Toolbox/edit/master/docs/04_uv2csolution.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -93,7 +98,7 @@
                 <h1 id="uvprojx-converter-uv2csolution">uvprojx converter uv2csolution</h1>
 <p>The <strong>uv2csolution</strong> project file converter allows users of µVision to migrate to the new project format CMSIS solution required by CMSIS-Toolbox.</p>
 <h2 id="usage">Usage</h2>
-<pre><code>Usage:
+<pre><code class="language-text">Usage:
   uv2csolution &lt;project.uvprojx | multiproject.uvmpw&gt; | [flags]
 
 Flags:
@@ -103,7 +108,7 @@ Flags:
 </code></pre>
 <h3 id="examples">Examples</h3>
 <p><em>Simple conversion</em></p>
-<pre><code class="language-sh">uv2csolution MyProject.uvprojx
+<pre><code class="language-shell">uv2csolution MyProject.uvprojx
 </code></pre>
 <p>This step generates the following files:</p>
 <ul>
@@ -112,7 +117,7 @@ Flags:
 <li><code>vcpkg-configuration.json</code></li>
 </ul>
 <p><em>Multi-project workspace conversion</em></p>
-<pre><code class="language-sh">uv2csolution MyProject.uvmpw
+<pre><code class="language-shell">uv2csolution MyProject.uvmpw
 </code></pre>
 <p>This step generates the following files:</p>
 <ul>
@@ -127,6 +132,7 @@ Flags:
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../03_elfdwt/" class="btn btn-neutral float-left" title="ElfDwT"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../licenses/" class="btn btn-neutral float-right" title="Licenses">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -148,9 +154,15 @@ Flags:
   <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
+        <span>
+          <a href="https://github.com/ARM-software/MDK-Toolbox" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
     
       <span><a href="../03_elfdwt/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../licenses/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

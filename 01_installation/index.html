@@ -75,6 +75,10 @@
                 <li class="toctree-l1"><a class="reference internal" href="../04_uv2csolution/">uv2csolution</a>
                 </li>
               </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../licenses/">Licenses</a>
+                </li>
+              </ul>
       </div>
     </div>
     </nav>
@@ -91,6 +95,7 @@
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
       <li class="breadcrumb-item active">Installation</li>
     <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/ARM-software/MDK-Toolbox/edit/master/docs/01_installation.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -113,60 +118,60 @@ while the third approach is used in the Visual Studio Code GUI.</p>
 <ul>
 <li>In a Windows command shell, type:</li>
 </ul>
-<pre><code class="language-sh">curl -LO https://aka.ms/vcpkg-init.cmd &amp;&amp; .\vcpkg-init.cmd
+<pre><code class="language-shell">curl -LO https://aka.ms/vcpkg-init.cmd &amp;&amp; .\vcpkg-init.cmd
 </code></pre>
 <ul>
 <li>In a Windows PowerShell, type:</li>
 </ul>
-<pre><code>iex (iwr -useb https://aka.ms/vcpkg-init.ps1)
+<pre><code class="language-shell">iex (iwr -useb https://aka.ms/vcpkg-init.ps1)
 </code></pre>
 <ul>
 <li>In a macOS/Linux terminal, type:</li>
 </ul>
-<pre><code class="language-sh">. &lt;(curl https://aka.ms/vcpkg-init.sh -L)
+<pre><code class="language-shell">. &lt;(curl https://aka.ms/vcpkg-init.sh -L)
 </code></pre>
 <h3 id="initialization">Initialization</h3>
 <ul>
 <li>In a Windows command shell, type:</li>
 </ul>
-<pre><code class="language-sh">%USERPROFILE%\.vcpkg\vcpkg-init.cmd
+<pre><code class="language-shell">%USERPROFILE%\.vcpkg\vcpkg-init.cmd
 </code></pre>
 <ul>
 <li>In a Windows PowerShell, type:</li>
 </ul>
-<pre><code class="language-sh">. ~/.vcpkg/vcpkg-init.ps1
+<pre><code class="language-shell">. ~/.vcpkg/vcpkg-init.ps1
 </code></pre>
 <ul>
 <li>In a macOS/Linux terminal, type:</li>
 </ul>
-<pre><code class="language-sh">. ~/.vcpkg/vcpkg-init
+<pre><code class="language-shell">. ~/.vcpkg/vcpkg-init
 </code></pre>
 <h3 id="update-vcpkg-registry">Update vcpkg registry</h3>
 <p>Update the Arm vcpkg registry to get access to tools hosted by Arm:</p>
-<pre><code class="language-sh">vcpkg-shell x-update-registry arm
+<pre><code class="language-shell">vcpkg-shell x-update-registry arm
 </code></pre>
 <ol>
 <li>Enable the MDK-Toolbox:</li>
 </ol>
-<pre><code class="language-shell">vcpkg-shell use mdk-toolbox
+<pre><code class="language-shellell">vcpkg-shell use mdk-toolbox
 </code></pre>
 <h2 id="direct-access">Direct access</h2>
-<p>The MDK-Toolbox is available for download in the <strong>Arm Tools Artifactory</strong> at https://artifacts.tools.arm.com/mdk-toolbox/.</p>
-<p>Download the right compressed archive for your host operating system:</p>
+<p>The MDK-Toolbox is available for download in the <a href="https://artifacts.tools.arm.com/mdk-toolbox/">Arm Tools Artifactory</a>.
+Download the right compressed archive for your host operating system:</p>
 <ul>
 <li>In a Windows terminal, type:</li>
 </ul>
-<pre><code class="language-sh">curl --output mdk-toolbox-windows-amd64.zip https://artifacts.tools.arm.com/mdk-toolbox/1.0.0/mdk-toolbox-windows-amd64.zip
+<pre><code class="language-shell">curl --output mdk-toolbox-windows-amd64.zip https://artifacts.tools.arm.com/mdk-toolbox/1.0.0/mdk-toolbox-windows-amd64.zip
 </code></pre>
 <ul>
 <li>In a macOS terminal, type:</li>
 </ul>
-<pre><code class="language-sh">curl --output mdk-toolbox-darwin-amd64.tar.gz https://artifacts.tools.arm.com/mdk-toolbox/1.0.0/mdk-toolbox-darwin-amd64.tar.gz
+<pre><code class="language-shell">curl --output mdk-toolbox-darwin-amd64.tar.gz https://artifacts.tools.arm.com/mdk-toolbox/1.0.0/mdk-toolbox-darwin-amd64.tar.gz
 </code></pre>
 <ul>
 <li>In a Linux terminal, type:</li>
 </ul>
-<pre><code class="language-sh">curl --output mdk-toolbox-linux-amd64.tar.gz https://artifacts.tools.arm.com/mdk-toolbox/1.0.0/mdk-toolbox-linux-amd64.tar.gz
+<pre><code class="language-shell">curl --output mdk-toolbox-linux-amd64.tar.gz https://artifacts.tools.arm.com/mdk-toolbox/1.0.0/mdk-toolbox-linux-amd64.tar.gz
 </code></pre>
 <ol>
 <li>Unzip the file.</li>
@@ -216,6 +221,10 @@ while the third approach is used in the Visual Studio Code GUI.</p>
 
   <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/ARM-software/MDK-Toolbox" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
     
     
       <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>

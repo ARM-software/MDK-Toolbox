@@ -5,7 +5,7 @@ a set of command-line tools for various purposes.
 
 ## Users guide
 
-The [**Users Guide**](https://arm-software.github.io/MDK-toolbox/) provides detailed information.
+The [**Users Guide**](https://arm-software.github.io/MDK-Toolbox/) provides detailed information.
 
 ## Included tools
 
